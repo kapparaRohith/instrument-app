@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import json
 import numpy as np
 import librosa

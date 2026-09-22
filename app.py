@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 import gradio as gr
 from predict import predict, predict_timeline, instrument_names
 import matplotlib.pyplot as plt
@@ -15,7 +17,7 @@ def analyze(audio_path):
         summary = "No instruments detected confidently."
 
     # Timeline
-    timeline = predict_timeline(audio_path, window_sec=10, hop_sec=1)
+    timeline = predict_timeline(audio_path, window_sec=10, hop_sec=2)
 
     cmap = plt.get_cmap('tab20')
     colors = {name: cmap(i % 20) for i, name in enumerate(instrument_names)}
