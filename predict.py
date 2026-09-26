@@ -107,6 +107,7 @@ def predict_timeline(audio_path, window_sec=10, hop_sec=1):
         })
 
         start_sample += hop_samples
+        print(f"Processed window at {start_time:.1f}s", flush=True)
 
     return timeline
 
