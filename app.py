@@ -53,8 +53,9 @@ demo = gr.Interface(
 import os
 
 if __name__ == "__main__":
-   demo.queue(max_size=10).launch(
+   demo.launch(
     server_name="0.0.0.0",
     server_port=int(os.environ.get("PORT", 7860)),
-    show_error=True
+    show_error=True,
+    max_threads=1
 )
